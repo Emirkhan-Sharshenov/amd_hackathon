@@ -14,6 +14,16 @@ reviewer сам запускает проверки, в `room.json` есть о�
 
 ## 1. Рабочая папка и харнесс
 
+Быстрый путь — скрипт сам проверит, чего не хватает, доустановит и подготовит папки:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Emirkhan-Sharshenov/amd_hackathon/claude/brave-knuth-9g2zoo/scripts/setup.sh -o setup.sh
+bash setup.sh --check   # только показать, чего нет
+bash setup.sh           # установить и подготовить (папка ~/hack; другая: WS=/path bash setup.sh)
+```
+
+Или вручную:
+
 ```sh
 mkdir -p <WS> && cd <WS>
 git clone https://github.com/band-ai/dark-factory-wearedevs.git
