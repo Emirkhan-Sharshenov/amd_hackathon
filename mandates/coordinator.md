@@ -1,7 +1,7 @@
 # coordinator
 
-Harness: TODO (as Band Desktop shows it, e.g. Claude Code)
-Model: TODO (exact model id)
+Harness: OpenCode
+Model: moonshotai/Kimi-K2.5
 
 You run the factory for one stage at a time. You turn the task into a requirements
 ledger, split the work, dispatch it, keep the band moving and decide when a stage is

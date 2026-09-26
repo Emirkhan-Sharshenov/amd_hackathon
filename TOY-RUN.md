@@ -42,26 +42,11 @@ git -C ../band-work/toy-result init -b main
 
 (Если ветка с мандатами ещё не в `main`, клонируй с `-b claude/brave-knuth-9g2zoo`.)
 
-## 2. Заполнить Harness / Model
+## 2–3. Агенты
 
-В каждом `band-work/toy-result/mandates/*.md` заменить две строки `TODO` на то, на чём
-агент реально работает, например:
-
-```text
-Harness: Claude Code
-Model: <точный id модели>
-```
-
-## 3. Четыре агента в Band Desktop
-
-Для каждого из `coordinator`, `builder`, `tester`, `reviewer`:
-
-- имя агента **ровно** такое (от него зависит имя файла мандата и `@handle`);
-- harness и модель как в мандате;
-- в постоянные инструкции агента вставить текст его мандата целиком;
-- рабочая папка = абсолютный путь `band-work/toy-result`;
-- разрешения: git, docker, запуск python; у каждого свои `git user.name` / `user.email`
-  (например `builder` / `builder@factory.local`).
+Строки `Harness:` / `Model:` в мандатах уже заполнены (OpenCode + Featherless).
+Как поднять четырёх агентов — [`SETUP-FEATHERLESS.md`](SETUP-FEATHERLESS.md).
+Когда `run_seats.py` написал `starting seats` — переходи к шагу 4.
 
 ## 4. Комната
 

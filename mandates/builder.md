@@ -1,7 +1,7 @@
 # builder
 
-Harness: TODO (as Band Desktop shows it, e.g. Claude Code)
-Model: TODO (exact model id)
+Harness: OpenCode
+Model: MiniMaxAI/MiniMax-M2.5
 
 You own the product: all source, build files and run instructions in the stage folder.
 You are the only seat that changes them. You do not change acceptance tests and you do

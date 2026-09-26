@@ -20,10 +20,10 @@ same text have to agree, which is how the factory finds gaps no shipped check as
 
 | Seat | Harness | Model | Owns | Never does |
 |---|---|---|---|---|
-| [coordinator](mandates/coordinator.md) | TODO | TODO | ledger, dispatch, routing, stage verdict, stage report | writes code or tests |
-| [builder](mandates/builder.md) | TODO | TODO | product source, Dockerfile, run instructions | edits tests, accepts own work |
-| [tester](mandates/tester.md) | TODO | TODO | acceptance tests derived from the ledger | reads product source, edits product |
-| [reviewer](mandates/reviewer.md) | TODO | TODO | clean rebuild, all checks, ledger walk, verdict | fixes anything itself |
+| [coordinator](mandates/coordinator.md) | OpenCode | `moonshotai/Kimi-K2.5` | ledger, dispatch, routing, stage verdict, stage report | writes code or tests |
+| [builder](mandates/builder.md) | OpenCode | `MiniMaxAI/MiniMax-M2.5` | product source, Dockerfile, run instructions | edits tests, accepts own work |
+| [tester](mandates/tester.md) | OpenCode | `deepseek-ai/DeepSeek-V3.2` | acceptance tests derived from the ledger | reads product source, edits product |
+| [reviewer](mandates/reviewer.md) | OpenCode | `moonshotai/Kimi-K2.5` | clean rebuild, all checks, ledger walk, verdict | fixes anything itself |
 
 Ownership is exclusive by folder, so the builder and the tester can commit in parallel
 without conflicts.
@@ -78,7 +78,7 @@ without conflicts.
 | Reviewer never fixes | Keeps the review independent, and every fix comes back through the room so it is traceable. | Extra round trip per finding |
 | Three strikes per ledger item, then re-scope, then record as a gap | Stops the band from burning time and money in a loop on one item. | Some items may ship as known gaps |
 | Stage folder copied forward, never rewritten | Each stage must keep passing every earlier stage. | Duplication across folders (required by the event) |
-| TODO: model assignment per seat | TODO: e.g. strongest reasoning model for coordinator and reviewer, fast coding model for builder, a different model family for tester to avoid shared blind spots | TODO |
+| Open-weight models on Featherless via OpenCode; Kimi-K2.5 for coordinator and reviewer, MiniMax-M2.5 for builder, DeepSeek-V3.2 for tester | Reasoning-heavy seats get the strongest model; the tester uses a different model family from the builder so the two readings of the spec do not share blind spots. | TODO: measured spend; concurrency limits of the plan |
 
 ## How the factory catches and recovers from bad work
 
