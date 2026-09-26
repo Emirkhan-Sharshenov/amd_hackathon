@@ -14,7 +14,7 @@ Kickoff: **сб, 26 сентября, 09:00 PDT** (= 16:00 UTC). В этот м�
 - [ ] Создать бесплатный аккаунт BAND и скачать **BAND Desktop** (карта не нужна)
 - [ ] Вступить в Discord BAND и Discord lablab.ai
 - [ ] Команда: 1–6 человек или соло — зарегистрировать на lablab.ai
-- [ ] Перечитать правила мандатов: **только generic-мандаты** — самый быстрый способ дисквалификации (см. [`roles/README.md`](roles/README.md))
+- [ ] Перечитать правила мандатов: **только generic-мандаты** — самый быстрый способ дисквалификации (проверяется `harness check`)
 - [ ] Посмотреть видео Featherless (Hermes, Open WebUI, OpenClaw) — ~10 минут
 - [ ] Прогнать [`PLAYBOOK.md`](PLAYBOOK.md) — план первых часов после kickoff
 
@@ -43,6 +43,7 @@ python3 scripts/featherless_smoke.py --model deepseek-ai/DeepSeek-V3-0324 --prom
 | Путь | Что там |
 |---|---|
 | `PLAYBOOK.md` | План действий: kickoff → первые часы → неделя → сдача |
-| `roles/` | Шаблоны **generic**-мандатов для агентов фабрики |
+| `mandates/` | Мандаты 4 агентов (coordinator, builder, tester, reviewer) — generic, проверены по словарю обоих треков |
+| `FACTORY.md` | Черновик описания фабрики для жюри (TODO заполнить по факту прогона) |
 | `scripts/featherless_smoke.py` | Проверка ключа, список моделей, тестовый запрос |
 | `.env.example` | Шаблон переменных окружения (`.env` в `.gitignore`) |
