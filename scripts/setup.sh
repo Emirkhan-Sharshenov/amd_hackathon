@@ -110,7 +110,16 @@ cd "$WS"
 ok "repositories cloned"
 
 cd dark-factory-wearedevs
-[[ -d .venv ]] || "$PY" -m venv .venv
+if ! "$PY" -c 'import ensurepip, venv' 2>/dev/null; then
+  if has apt-get; then
+    step "Installing venv support for $PY"
+    sudo_cmd apt-get install -y "$(basename "$PY")-venv"
+  else
+    echo "Python venv/ensurepip is missing for $PY; install it and re-run."; exit 1
+  fi
+fi
+# A half-created venv (no pip inside) is left behind when ensurepip was missing.
+[[ -x .venv/bin/pip ]] || { rm -rf .venv; "$PY" -m venv .venv; }
 .venv/bin/python -m pip install -q --upgrade pip
 .venv/bin/python -m pip install -q -r harness/requirements.txt
 if [[ "$OS" == "Linux" ]]; then
